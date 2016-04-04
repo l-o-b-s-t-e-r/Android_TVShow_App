@@ -16,9 +16,9 @@ import java.util.List;
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.PersonViewHolder>{
 
     private Context context;
-    private List<Show>  shows;
+    private List<TVShow>  shows;
 
-    public RecyclerViewAdapter(Context context, List<Show>  shows){
+    public RecyclerViewAdapter(Context context, List<TVShow>  shows){
         this.context = context;
         this.shows = shows;
     }

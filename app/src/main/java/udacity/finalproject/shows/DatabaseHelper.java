@@ -28,7 +28,7 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
      ************************************************/
 
     private static final String DATABASE_NAME = "udacity.db";
-    private static final int DATABASE_VERSION = 4;
+    private static final int DATABASE_VERSION = 5;
 
     private Dao<TVShow, Integer> dao;
     private Context context;
@@ -75,7 +75,7 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
                     .evaluationsNumber(75).build());
 
             dao.create(TVShowBuilder.builder()
-                    .name(context.getString(R.string.description_game_of_thrones))
+                    .name(context.getString(R.string.game_of_thrones))
                     .genre(context.getString(R.string.genre_fantasy))
                     .rating(8.9f)
                     .description(context.getString(R.string.description_game_of_thrones))

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/main_image"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:layout_alignParentTop="true"
+            android:src="@drawable/scrubs" />
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/main_image"
+            android:layout_marginLeft="@dimen/left_name"
+            android:text="Scrubs"
+            android:textSize="@dimen/name_size" />
+
+        <TextView
+            android:id="@+id/genre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/name"
+            android:layout_marginLeft="@dimen/left_name"
+            android:text="Comedy"
+            android:textSize="@dimen/genre_size" />
+
+        <TextView
+            android:id="@+id/rating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/genre"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="@+id/name"
+            android:layout_below="@+id/main_image"
+            android:layout_marginRight="@dimen/left_name"
+            android:background="@drawable/circle"
+            android:gravity="center"
+            android:text="8"
+            android:textSize="@dimen/rating_size" />
+
+    </RelativeLayout>
+
+</LinearLayout>

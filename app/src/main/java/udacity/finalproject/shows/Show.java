@@ -7,10 +7,10 @@ public class Show {
 
     private String name;
     private String genre;
-    private int rating;
+    private float rating;
     private int imageId;
 
-    public Show(String name, String genre, int rating, int imageId){
+    public Show(String name, String genre, float rating, int imageId){
         this.name = name;
         this.genre = genre;
         this.rating = rating;
@@ -33,11 +33,11 @@ public class Show {
         this.genre = genre;
     }
 
-    public int getRating() {
+    public float getRating() {
         return rating;
     }
 
-    public void setRating(int rating) {
+    public void setRating(float rating) {
         this.rating = rating;
     }
 

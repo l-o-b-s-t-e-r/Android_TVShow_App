@@ -1,3 +1,20 @@
 <resources>
     <string name="app_name">Shows</string>
+
+    <string name="friends">Friends</string>
+    <string name="game_of_thrones">Game of Thrones</string>
+    <string name="himym">How I met your mother</string>
+    <string name="scrubs">Scrubs</string>
+    <string name="breaking_bad">Breaking Bad</string>
+
+    <string name="genre_comedy">comedy</string>
+    <string name="genre_thriller">thriller</string>
+    <string name="genre_fantasy">fantasy</string>
+
+    <string name="description_friends"> dsf dsf dsf g dfg heq het d</string>
+    <string name="description_game_of_thrones">dfh wrh werg erf qrg e hwq g h er wqds qrg ewgwergvwrg eqrg qergeqrg</string>
+    <string name="description_himym">dh rgh ertg rwe ce rc reb tewgwergerf qwf wed</string>
+    <string name="description_scrubs">jhjdf bsdf gqerf qef hqea eqg qrg qerg eqrg</string>
+    <string name="description_breaking_bad">sgdfhdf gsdfg sd fgqer web ew beq w</string>
+
 </resources>

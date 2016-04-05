@@ -56,6 +56,10 @@ public class Rating {
         return rating;
     }
 
+    public float getRoundedRating(){
+        return (float)Math.round(rating*10.0f)/10.0f;
+    }
+
     public void setRating(float rating) {
         this.rating = rating;
     }

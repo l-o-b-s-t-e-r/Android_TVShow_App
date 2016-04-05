@@ -1,73 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-<RelativeLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="udacity.finalproject.shows.MainActivity">
+    android:background="@color/background"
+    android:orientation="vertical">
 
-    <include layout="@layout/item"
-        android:id="@+id/item"/>
-
-    <RatingBar
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/card_margin"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/item"
-        android:id="@+id/ratingBar"
-        android:stepSize="0.1"
-        android:numStars="5"
-        />
-
-    <TextView
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/ratingBar"
-        android:id="@+id/description"
-        android:layout_marginLeft="@dimen/left_name"
-        android:text="@string/description_scrubs"/>
+        tools:context="udacity.finalproject.shows.MainActivity">
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="100dp"
-        android:gravity="top"
-        android:id="@+id/feed_back"
-        android:scrollbars="vertical"
-        android:layout_below="@+id/description"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true" />
+        <include
+            android:id="@+id/item"
+            layout="@layout/item" />
 
-    <Button
-        style="?android:attr/buttonStyleSmall"
-        android:background="@drawable/button_style"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/leave_feedback"
-        android:layout_below="@+id/feed_back"
-        android:layout_alignRight="@+id/item"
-        android:layout_alignEnd="@+id/item"
-        android:onClick="leaveFeedBack"
-        android:textColor="@color/white"
-        android:id="@+id/button" />
+        <RatingBar
+            android:id="@+id/ratingBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/item"
+            android:layout_marginLeft="@dimen/card_margin"
+            android:numStars="5"
+            android:stepSize="0.1" />
 
-    <com.facebook.share.widget.ShareButton
-        android:background="@drawable/button_style"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginRight="2dp"
-        android:layout_toLeftOf="@+id/button"
-        android:layout_alignTop="@+id/button"
-        android:layout_alignBottom="@id/button"
-        android:id="@+id/share_btn"
-        android:onClick="share"
-        android:visibility="invisible"/>
+        <TextView
+            android:id="@+id/description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ratingBar"
+            android:layout_marginLeft="@dimen/rating_padding"
+            android:text="@string/description_scrubs"
+            android:textSize="@dimen/description_text" />
 
-</RelativeLayout>
+        <EditText
+            android:id="@+id/feed_back"
+            android:layout_width="wrap_content"
+            android:layout_height="100dp"
+            android:layout_alignEnd="@+id/share_btn"
+            android:layout_alignLeft="@+id/description"
+            android:layout_alignRight="@+id/share_btn"
+            android:layout_alignStart="@+id/description"
+            android:layout_below="@+id/description"
+            android:layout_marginTop="@dimen/bit_margin"
+            android:gravity="top"
+            android:paddingLeft="0dp"
+            android:scrollbars="vertical"
+            android:textColor="@color/white"
+            android:textSize="@dimen/description_text" />
+
+        <Button
+            android:id="@+id/button"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/item"
+            android:layout_alignRight="@+id/item"
+            android:layout_below="@+id/feed_back"
+            android:layout_marginBottom="@dimen/card_margin"
+            android:background="@drawable/button_style"
+            android:onClick="leaveFeedBack"
+            android:text="@string/leave_feedback"
+            android:textColor="@color/white" />
+
+        <ImageButton
+            android:id="@+id/share_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/ratingBar"
+            android:layout_alignEnd="@+id/item"
+            android:layout_alignRight="@+id/item"
+            android:layout_alignTop="@+id/ratingBar"
+            android:background="@color/background"
+            android:foregroundGravity="right"
+            android:onClick="share"
+            android:src="@drawable/facebook_icon"
+            android:visibility="invisible" />
+
+    </RelativeLayout>
 </ScrollView>

@@ -1,8 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
-    <color name="black">#000000</color>
+    <color name="colorPrimary">#ff9800</color>
+    <color name="colorPrimaryDark">#ffffff</color>
+    <color name="colorAccent">#ff7b00</color>
+    <color name="black">#e90000</color>
     <color name="white">#FFFFFF</color>
+    <color name="font">@color/background_material_light</color>
+    <color name="background_material_light">#bcbcbc</color>
+    <color name="background">#202020</color>
+    <color name="card_background">#3a3a3a</color>
+    <color name="dark_orange">#e68900</color>
+    <color name="secondary_text_material_light">#ffffff</color>
+    <color name="colorBackground">#ffffff</color>
+    <color name="foreground_material_light">#f11616</color>
+    <color name="primary_text_default_material_light">#def30101</color>
 </resources>

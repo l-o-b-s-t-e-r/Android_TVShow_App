@@ -6,10 +6,14 @@ import android.util.Log;
 
 import com.j256.ormlite.android.apptools.OrmLiteSqliteOpenHelper;
 import com.j256.ormlite.dao.Dao;
+import com.j256.ormlite.stmt.PreparedQuery;
+import com.j256.ormlite.stmt.QueryBuilder;
 import com.j256.ormlite.support.ConnectionSource;
 import com.j256.ormlite.table.TableUtils;
 
 import java.sql.SQLException;
+import java.util.List;
+import java.util.Map;
 
 /**
  * Created by Lobster on 04.04.16.
@@ -18,10 +22,8 @@ import java.sql.SQLException;
 public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
 
     private static final String DATABASE_NAME = "udacity.db";
-    private static final int DATABASE_VERSION = 16;
+    private static final int DATABASE_VERSION = 19;
 
-    private Dao<TVShow, Integer> dao;
-    private Dao<Rating, Integer> ratingDao;
     private Context context;
 
     public DatabaseHelper(Context context) {
@@ -35,10 +37,9 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
 
             TableUtils.createTable(connectionSource, TVShow.class);
             TableUtils.createTable(connectionSource, Rating.class);
-            dao = getDao(TVShow.class);
-            ratingDao = getDao(Rating.class);
+            Dao<TVShow, Integer> daoTVShow = getDao(TVShow.class);
 
-            dao.create(TVShowBuilder.builder()
+            daoTVShow.create(TVShowBuilder.builder()
                     .name(context.getString(R.string.friends))
                     .genre(context.getString(R.string.genre_comedy))
                     .rating(5.0f)
@@ -46,7 +47,7 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
                     .imageId(R.drawable.friends)
                     .evaluationsNumber(15).build());
 
-            dao.create(TVShowBuilder.builder()
+            daoTVShow.create(TVShowBuilder.builder()
                     .name(context.getString(R.string.himym))
                     .genre(context.getString(R.string.genre_comedy))
                     .rating(4.5f)
@@ -54,7 +55,7 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
                     .imageId(R.drawable.himym)
                     .evaluationsNumber(10).build());
 
-            dao.create(TVShowBuilder.builder()
+            daoTVShow.create(TVShowBuilder.builder()
                     .name(context.getString(R.string.breaking_bad))
                     .genre(context.getString(R.string.genre_thriller))
                     .rating(4.7f)
@@ -62,7 +63,7 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
                     .imageId(R.drawable.breaking_bad)
                     .evaluationsNumber(12).build());
 
-            dao.create(TVShowBuilder.builder()
+            daoTVShow.create(TVShowBuilder.builder()
                     .name(context.getString(R.string.game_of_thrones))
                     .genre(context.getString(R.string.genre_fantasy))
                     .rating(4.3f)
@@ -70,7 +71,7 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
                     .imageId(R.drawable.game_of_thrones)
                     .evaluationsNumber(8).build());
 
-            dao.create(TVShowBuilder.builder()
+            daoTVShow.create(TVShowBuilder.builder()
                     .name(context.getString(R.string.scrubs))
                     .genre(context.getString(R.string.genre_comedy))
                     .rating(4.6f)
@@ -97,18 +98,44 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
         }
     }
 
-    public Dao<TVShow, Integer> getShowDao() throws SQLException {
-        if (dao == null) {
-            dao = getDao(TVShow.class);
+    public <T> List<T> getAll(Class<T> tClass) {
+        try {
+            Dao<T, Integer> dao = getDao(tClass);
+            return dao.queryForAll();
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
-        return dao;
+        return null;
     }
 
-    public Dao<Rating, Integer> getRatingDao() throws SQLException {
-        if (ratingDao == null) {
-            ratingDao = getDao(Rating.class);
+    public <T> T getFirst(String columnName, Object value, Class<T> tClass) {
+        try {
+            Dao<T, Integer> dao = getDao(tClass);
+            QueryBuilder<T, Integer> queryBuilder = dao.queryBuilder();
+            PreparedQuery<T> preparedQuery = queryBuilder.where().eq(columnName, value).prepare();
+            return dao.queryForFirst(preparedQuery);
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
-        return ratingDao;
+        return null;
+    }
+
+    public <T> List<T> getAllBy(Map<String, Object> properties, Class<T> tClass) {
+        try {
+            Dao<T, Integer> dao = getDao(tClass);
+            return dao.queryForFieldValuesArgs(properties);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public <T> void save(T entity, Class<T> tClass) {
+        try {
+            getDao(tClass).createOrUpdate(entity);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
 }

@@ -1,11 +1,5 @@
 package udacity.finalproject.shows;
 
-import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.drawable.BitmapDrawable;
-
-import java.nio.ByteBuffer;
-
 /**
  * Created by Lobster on 04.04.16.
  */
@@ -18,41 +12,41 @@ final public class TVShowBuilder {
     private int imageId;
     private int evaluationsNumber;
 
-    public static TVShowBuilder builder(){
+    public static TVShowBuilder builder() {
         return new TVShowBuilder();
     }
 
-    public TVShowBuilder name(String name){
+    public TVShowBuilder name(String name) {
         this.name = name;
         return this;
     }
 
-    public TVShowBuilder genre(String genre){
+    public TVShowBuilder genre(String genre) {
         this.genre = genre;
         return this;
     }
 
-    public TVShowBuilder description(String description){
+    public TVShowBuilder description(String description) {
         this.description = description;
         return this;
     }
 
-    public TVShowBuilder rating(float rating){
+    public TVShowBuilder rating(float rating) {
         this.rating = rating;
         return this;
     }
 
-    public TVShowBuilder evaluationsNumber(int evaluationsNumber){
+    public TVShowBuilder evaluationsNumber(int evaluationsNumber) {
         this.evaluationsNumber = evaluationsNumber;
         return this;
     }
 
-    public TVShowBuilder imageId(int imageId){
+    public TVShowBuilder imageId(int imageId) {
         this.imageId = imageId;
         return this;
     }
 
-    public TVShow build(){
+    public TVShow build() {
         TVShow tvShowEntity = new TVShow();
         tvShowEntity.setDescription(this.description);
         tvShowEntity.setEvaluationsNumber(this.evaluationsNumber);
@@ -63,6 +57,5 @@ final public class TVShowBuilder {
 
         return tvShowEntity;
     }
-
 
 }

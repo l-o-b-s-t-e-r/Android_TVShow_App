@@ -1,13 +1,7 @@
 package udacity.finalproject.shows;
 
-import android.app.Service;
 import android.content.Context;
-import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
-import android.graphics.Bitmap;
-import android.graphics.drawable.BitmapDrawable;
-import android.os.IBinder;
-import android.support.annotation.Nullable;
 import android.util.Log;
 
 import com.j256.ormlite.android.apptools.OrmLiteSqliteOpenHelper;
@@ -23,14 +17,11 @@ import java.sql.SQLException;
 
 public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
 
-    /************************************************
-     * Suggested Copy/Paste code. Everything from here to the done block.
-     ************************************************/
-
     private static final String DATABASE_NAME = "udacity.db";
-    private static final int DATABASE_VERSION = 5;
+    private static final int DATABASE_VERSION = 14;
 
     private Dao<TVShow, Integer> dao;
+    private Dao<Rating, Integer> ratingDao;
     private Context context;
 
     public DatabaseHelper(Context context) {
@@ -38,57 +29,54 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
         this.context = context;
     }
 
-    /************************************************
-     * Suggested Copy/Paste Done
-     ************************************************/
-
     @Override
     public void onCreate(SQLiteDatabase sqliteDatabase, ConnectionSource connectionSource) {
         try {
 
-            // Create tables. This onCreate() method will be invoked only once of the application life time i.e. the first time when the application starts.
             TableUtils.createTable(connectionSource, TVShow.class);
+            TableUtils.createTable(connectionSource, Rating.class);
             dao = getDao(TVShow.class);
+            ratingDao = getDao(Rating.class);
 
             dao.create(TVShowBuilder.builder()
                     .name(context.getString(R.string.friends))
                     .genre(context.getString(R.string.genre_comedy))
-                    .rating(9.1f)
+                    .rating(5.0f)
                     .description(context.getString(R.string.description_friends))
                     .imageId(R.drawable.friends)
-                    .evaluationsNumber(100).build());
+                    .evaluationsNumber(15).build());
 
             dao.create(TVShowBuilder.builder()
                     .name(context.getString(R.string.himym))
                     .genre(context.getString(R.string.genre_comedy))
-                    .rating(8.7f)
+                    .rating(4.5f)
                     .description(context.getString(R.string.description_himym))
                     .imageId(R.drawable.himym)
-                    .evaluationsNumber(60).build());
+                    .evaluationsNumber(10).build());
 
             dao.create(TVShowBuilder.builder()
                     .name(context.getString(R.string.breaking_bad))
                     .genre(context.getString(R.string.genre_thriller))
-                    .rating(9.0f)
+                    .rating(4.7f)
                     .description(context.getString(R.string.description_breaking_bad))
                     .imageId(R.drawable.breaking_bad)
-                    .evaluationsNumber(75).build());
+                    .evaluationsNumber(12).build());
 
             dao.create(TVShowBuilder.builder()
                     .name(context.getString(R.string.game_of_thrones))
                     .genre(context.getString(R.string.genre_fantasy))
-                    .rating(8.9f)
+                    .rating(4.3f)
                     .description(context.getString(R.string.description_game_of_thrones))
                     .imageId(R.drawable.game_of_thrones)
-                    .evaluationsNumber(120).build());
+                    .evaluationsNumber(8).build());
 
             dao.create(TVShowBuilder.builder()
                     .name(context.getString(R.string.scrubs))
                     .genre(context.getString(R.string.genre_comedy))
-                    .rating(8.8f)
+                    .rating(4.6f)
                     .description(context.getString(R.string.description_scrubs))
                     .imageId(R.drawable.scrubs)
-                    .evaluationsNumber(90).build());
+                    .evaluationsNumber(9).build());
 
         } catch (SQLException e) {
             Log.e(DatabaseHelper.class.getName(), "Unable to create datbases", e);
@@ -99,11 +87,8 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
     public void onUpgrade(SQLiteDatabase sqliteDatabase, ConnectionSource connectionSource, int oldVer, int newVer) {
         try {
 
-            // In case of change in database of next version of application, please increase the value of DATABASE_VERSION variable, then this method will be invoked
-            //automatically. Developer needs to handle the upgrade logic here, i.e. create a new table or a new column to an existing table, take the backups of the
-            // existing database etc.
-
             TableUtils.dropTable(connectionSource, TVShow.class, true);
+            TableUtils.dropTable(connectionSource, Rating.class, true);
             onCreate(sqliteDatabase, connectionSource);
 
         } catch (SQLException e) {
@@ -112,13 +97,18 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
         }
     }
 
-    // Create the getDao methods of all database tables to access those from android code.
-    // Insert, delete, read, update everything will be happened through DAOs
-
     public Dao<TVShow, Integer> getShowDao() throws SQLException {
         if (dao == null) {
             dao = getDao(TVShow.class);
         }
         return dao;
     }
+
+    public Dao<Rating, Integer> getRatingDao() throws SQLException {
+        if (ratingDao == null) {
+            ratingDao = getDao(Rating.class);
+        }
+        return ratingDao;
+    }
+
 }

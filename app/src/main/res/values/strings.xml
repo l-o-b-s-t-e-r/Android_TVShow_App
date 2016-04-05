@@ -17,4 +17,11 @@
     <string name="description_scrubs">jhjdf bsdf gqerf qef hqea eqg qrg qerg eqrg</string>
     <string name="description_breaking_bad">sgdfhdf gsdfg sd fgqer web ew beq w</string>
 
+    <string name="toast_message">Thank you!</string>
+    <string name="toast_error_message">Ups:( There are no apps to leave feedback</string>k
+    <string name="leave_feedback">Leave feedback</string>
+
+    <string name="email">vladislav-loboda@mail.ru</string>
+    <string name="subject">Feedback</string>
+
 </resources>

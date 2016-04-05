@@ -41,14 +41,13 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         holder.mainImage.setImageResource(shows.get(index).getImageId());
         holder.name.setText(shows.get(index).getName());
         holder.genre.setText(shows.get(index).getGenre());
-        holder.rating.setText(String.valueOf(shows.get(index).getRating()));
+        holder.rating.setText(String.valueOf(shows.get(index).getRoundedRating()));
 
-        holder.mainImage.setOnClickListener(new View.OnClickListener() {
+        holder.view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.i("OK", String.valueOf(index) + " " + String.valueOf(holder.mainImage.getId()));
                 Intent intent = new Intent(context, InfoActivity.class);
-                intent.putExtra(MainActivity.NUMBER, index);
+                intent.putExtra(Intent.EXTRA_TEXT, shows.get(index).getShowId());
                 context.startActivity(intent);
             }
         });
@@ -56,6 +55,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     public class PersonViewHolder extends RecyclerView.ViewHolder {
 
+        private View view;
         private ImageView mainImage;
         private TextView name;
         private TextView genre;
@@ -63,6 +63,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
         public PersonViewHolder(final View view) {
             super(view);
+            this.view = view;
             this.mainImage = (ImageView)view.findViewById(R.id.main_image);
             this.name = (TextView)view.findViewById(R.id.name);
             this.genre = (TextView)view.findViewById(R.id.genre);

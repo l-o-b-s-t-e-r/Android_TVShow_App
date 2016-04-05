@@ -1,2 +1,4 @@
 dataClass=udacity.finalproject.shows.TVShow
 tableName=shows
+dataClass=udacity.finalproject.shows.Rating
+tableName=rating

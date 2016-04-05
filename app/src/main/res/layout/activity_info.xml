@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+<RelativeLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="udacity.finalproject.shows.MainActivity">
@@ -12,18 +16,43 @@
     <RatingBar
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/left_name"
+        android:layout_marginLeft="@dimen/card_margin"
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/item"
         android:id="@+id/ratingBar"
-        android:stepSize="1"
+        android:stepSize="0.1"
         android:numStars="5"
         />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/ratingBar"
+        android:id="@+id/description"
         android:layout_marginLeft="@dimen/left_name"
-        android:text="This is the best show ever!"/>
+        android:text="@string/description_scrubs"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:gravity="top"
+        android:id="@+id/feed_back"
+        android:scrollbars="vertical"
+        android:layout_below="@+id/description"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true" />
+
+    <Button
+        android:background="@drawable/button_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/leave_feedback"
+        android:layout_below="@+id/feed_back"
+        android:layout_alignRight="@+id/item"
+        android:layout_alignEnd="@+id/item"
+        android:onClick="leaveFeedBack"/>
 
 </RelativeLayout>
+</ScrollView>

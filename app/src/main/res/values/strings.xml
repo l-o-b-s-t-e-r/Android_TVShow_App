@@ -15,7 +15,7 @@
     <string name="description_friends">Follows the lives of six friends living in Manhattan.</string>
     <string name="description_game_of_thrones">While a civil war brews between several noble families in Westeros, the children of the former rulers of the land attempt to rise up to power. Meanwhile a forgotten race, bent on destruction, return after thousands of years in the North.</string>
     <string name="description_himym">A father recounts to his children, through a series of flashbacks, the journey he and his four best friends took leading up to him meeting their mother.</string>
-    <string name="description_scrubs">In the unreal world of Sacred Heart Hospital, intern John "J.D" Dorian learns the ways of medicine, friendship and life.</string>
+    <string name="description_scrubs">In the unreal world of Sacred Heart Hospital, intern John Dorian learns the ways of medicine, friendship and life.</string>
     <string name="description_breaking_bad">A high school chemistry teacher diagnosed with inoperable lung cancer turns to manufacturing and selling methamphetamine, with his former student, in order to secure his familys financial future.</string>
 
     <string name="toast_message">Thank you!</string>
@@ -25,5 +25,8 @@
     <string name="email">vladislav-loboda@mail.ru</string>
     <string name="subject">Feedback</string>
     <string name="your_rate">Your mark: </string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

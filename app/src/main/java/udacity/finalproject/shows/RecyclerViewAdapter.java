@@ -7,7 +7,6 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -17,10 +16,12 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     private Context context;
     private List<TVShow>  shows;
+    private BlankFragment fragment;
 
-    public RecyclerViewAdapter(Context context, List<TVShow>  shows){
+    public RecyclerViewAdapter(Context context, List<TVShow> shows, BlankFragment fragment) {
         this.context = context;
         this.shows = shows;
+        this.fragment = fragment;
     }
 
     @Override
@@ -46,9 +47,14 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         holder.view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(context, InfoActivity.class);
-                intent.putExtra(Intent.EXTRA_TEXT, shows.get(index).getShowId());
-                context.startActivity(intent);
+                if (fragment != null) {
+                    fragment.setShowId(shows.get(index).getShowId());
+                    Log.i("INFORMATION", "AAAA");
+                } else {
+                    Intent intent = new Intent(context, InfoActivity.class);
+                    intent.putExtra(Intent.EXTRA_TEXT, shows.get(index).getShowId());
+                    context.startActivity(intent);
+                }
             }
         });
     }

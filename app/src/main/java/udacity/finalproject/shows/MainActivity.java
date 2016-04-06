@@ -24,13 +24,20 @@ public class MainActivity extends AppCompatActivity{
 
         databaseHelper = OpenHelperManager.getHelper(this, DatabaseHelper.class);
 
+        BlankFragment fragment = (BlankFragment) getFragmentManager().findFragmentById(R.id.list_fragment);
+        if (fragment != null) {
+            fragment.setShowId(1);
+        }
+
         RecyclerView recyclerView = (RecyclerView)findViewById(R.id.recyclerView);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this, LinearLayout.VERTICAL, false);
 
         recyclerView.setLayoutManager(layoutManager);
 
         List<TVShow> shows = databaseHelper.getAll(TVShow.class);
-        RecyclerViewAdapter adapter = new RecyclerViewAdapter(this, shows);
+        RecyclerViewAdapter adapter = new RecyclerViewAdapter(this, shows, fragment);
         recyclerView.setAdapter(adapter);
+
+
     }
 }

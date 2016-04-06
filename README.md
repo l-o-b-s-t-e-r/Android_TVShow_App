@@ -5,14 +5,20 @@
 
 ##Realisation
 I use SQLite and ORM OrmLite to keep info about shows.
+
 I use fragments to support tablet and phones.
+
 Localization support for Ukraine.
 
 ##Tests
 Google Nexus 5X - API 23 - 1080x1920
+
 Google Nexus S - API 16 - 480x800
+
 LG Optimus L3 II - API 16 - 240x320
+
 Google Nexus 7 - API 23 - 800x1280
+
 Google Nexus 10 - API 21 - 2560x1600
 
 ##Screenshots

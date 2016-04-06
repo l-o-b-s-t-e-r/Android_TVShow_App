@@ -6,7 +6,7 @@
     android:background="@color/background"
     android:orientation="horizontal"
     android:weightSum="3"
-    tools:context="udacity.finalproject.shows.MainActivity">
+    tools:context=".activity.MainActivity">
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recyclerView"
@@ -17,7 +17,7 @@
 
     <fragment
         android:id="@+id/list_fragment"
-        class="udacity.finalproject.shows.BlankFragment"
+        class="udacity.finalproject.shows.activity.BlankFragment"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="2"

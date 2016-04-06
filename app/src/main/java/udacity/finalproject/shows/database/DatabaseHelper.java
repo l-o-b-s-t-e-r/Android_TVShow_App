@@ -1,4 +1,4 @@
-package udacity.finalproject.shows;
+package udacity.finalproject.shows.database;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
@@ -14,6 +14,11 @@ import com.j256.ormlite.table.TableUtils;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.Map;
+
+import udacity.finalproject.shows.R;
+import udacity.finalproject.shows.model.Rating;
+import udacity.finalproject.shows.model.TVShow;
+import udacity.finalproject.shows.model.TVShowBuilder;
 
 /**
  * Created by Lobster on 04.04.16.

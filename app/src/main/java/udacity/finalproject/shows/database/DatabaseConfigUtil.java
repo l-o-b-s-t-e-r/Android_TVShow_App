@@ -1,4 +1,4 @@
-package udacity.finalproject.shows;
+package udacity.finalproject.shows.database;
 
 import com.j256.ormlite.android.apptools.OrmLiteConfigUtil;
 

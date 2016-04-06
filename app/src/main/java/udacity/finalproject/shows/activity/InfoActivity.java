@@ -1,22 +1,13 @@
-package udacity.finalproject.shows;
+package udacity.finalproject.shows.activity;
 
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 
-import com.facebook.FacebookCallback;
-import com.facebook.FacebookException;
 import com.facebook.login.LoginManager;
-import com.facebook.login.LoginResult;
-import com.facebook.share.ShareApi;
-import com.facebook.share.model.SharePhoto;
-import com.facebook.share.model.SharePhotoContent;
 
-import java.util.Arrays;
+import udacity.finalproject.shows.R;
 
 /**
  * Created by Lobster on 04.04.16.

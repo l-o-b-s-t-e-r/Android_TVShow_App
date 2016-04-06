@@ -11,6 +11,10 @@ import android.widget.TextView;
 
 import java.util.List;
 
+import udacity.finalproject.shows.activity.BlankFragment;
+import udacity.finalproject.shows.activity.InfoActivity;
+import udacity.finalproject.shows.model.TVShow;
+
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.PersonViewHolder> {
 
     private Context context;

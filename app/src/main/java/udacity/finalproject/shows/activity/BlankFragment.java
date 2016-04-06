@@ -1,4 +1,4 @@
-package udacity.finalproject.shows;
+package udacity.finalproject.shows.activity;
 
 
 import android.app.Activity;
@@ -32,6 +32,10 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import udacity.finalproject.shows.R;
+import udacity.finalproject.shows.model.Rating;
+import udacity.finalproject.shows.model.TVShow;
 
 
 public class BlankFragment extends Fragment {

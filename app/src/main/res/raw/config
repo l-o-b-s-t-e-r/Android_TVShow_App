@@ -1,4 +1,4 @@
-dataClass=udacity.finalproject.shows.TVShow
+dataClass=udacity.finalproject.shows.model.TVShow
 tableName=shows
-dataClass=udacity.finalproject.shows.Rating
+dataClass=udacity.finalproject.shows.model.Rating
 tableName=rating

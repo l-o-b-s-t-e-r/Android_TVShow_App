@@ -3,11 +3,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    tools:context="udacity.finalproject.shows.MainActivity">
+    tools:context=".activity.MainActivity">
 
     <fragment
         android:id="@+id/list_fragment"
-        class="udacity.finalproject.shows.BlankFragment"
+        class="udacity.finalproject.shows.activity.BlankFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:layout="@layout/fragment_blank" />

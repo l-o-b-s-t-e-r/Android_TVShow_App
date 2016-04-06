@@ -1,4 +1,4 @@
-package udacity.finalproject.shows;
+package udacity.finalproject.shows.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,6 +13,11 @@ import com.facebook.login.LoginManager;
 import com.j256.ormlite.android.apptools.OpenHelperManager;
 
 import java.util.List;
+
+import udacity.finalproject.shows.R;
+import udacity.finalproject.shows.RecyclerViewAdapter;
+import udacity.finalproject.shows.database.DatabaseHelper;
+import udacity.finalproject.shows.model.TVShow;
 
 public class MainActivity extends AppCompatActivity {
 

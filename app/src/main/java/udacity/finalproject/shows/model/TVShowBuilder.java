@@ -1,4 +1,4 @@
-package udacity.finalproject.shows;
+package udacity.finalproject.shows.model;
 
 /**
  * Created by Lobster on 04.04.16.

@@ -1,4 +1,4 @@
-package udacity.finalproject.shows;
+package udacity.finalproject.shows.model;
 
 import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.table.DatabaseTable;
@@ -56,11 +56,11 @@ public class Rating {
         return rating;
     }
 
-    public float getRoundedRating() {
-        return (float) Math.round(rating * 10.0f) / 10.0f;
-    }
-
     public void setRating(float rating) {
         this.rating = rating;
+    }
+
+    public float getRoundedRating() {
+        return (float) Math.round(rating * 10.0f) / 10.0f;
     }
 }

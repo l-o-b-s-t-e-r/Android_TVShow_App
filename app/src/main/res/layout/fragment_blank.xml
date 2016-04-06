@@ -5,12 +5,12 @@
     android:layout_height="match_parent"
     android:background="@color/background"
     android:orientation="vertical"
-    tools:context="udacity.finalproject.shows.BlankFragment">
+    tools:context=".activity.BlankFragment">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:context="udacity.finalproject.shows.MainActivity">
+        tools:context=".activity.MainActivity">
 
         <include
             android:id="@+id/item"

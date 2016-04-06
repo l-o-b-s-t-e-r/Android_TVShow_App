@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">Серіали</string>
+    <string name="facebook_app_id">592263507530743</string>
+
+    <string name="friends">Друзі</string>
+    <string name="game_of_thrones">Гра престолів</string>
+    <string name="himym">Як я зустрів вашу маму</string>
+    <string name="scrubs">Клініка</string>
+    <string name="breaking_bad">У всі тяжкі</string>
+
+    <string name="genre_comedy">комедія</string>
+    <string name="genre_thriller">триллер</string>
+    <string name="genre_fantasy">фентезі</string>
+
+    <string name="description_friends">Шестеро друзів живуть в Нью-Йорку, і як мешканців будь-якого великого міста, їх цікавить декілька питань: де взяти гроші, як знайти своє місце в житті і як встигнути вчасно внести орендну плату за квартиру.</string>
+    <string name="description_game_of_thrones">Серіал «Гра престолів» заснований на серії з 7 книг Джорджа Р. Мартіна, кожен сезон це одна книга. У фентезійному серіалі розповідається про епічну боротьбу за владу у величезному королівстві.</string>
+    <string name="description_himym">Комічна історія про те, як закохався хлопець Тед. У Теда є кращий друг - Маршал. Він раптом повідомляє, що хоче одружитися з вихователем у дитячому садку по імені Лілі. З тих пір і починаються всі неприємності.</string>
+    <string name="description_scrubs">Два випускники медичної школи Джон Доріан і Кріс Терк приходять працювати в клініку. Так як досвіду практичної роботи у них немає, спочатку їм доводиться дуже несолодко.</string>
+    <string name="description_breaking_bad">Уолтер Уайт – викладач хімії в школі. У нього є дружина і син-інвалід. Йому треба годувати сімю, а на зарплату викладача не розгуляєшся тому він вимушений почати готувати метамфентамина зі своїім колишнім учнем.</string>
+
+    <string name="toast_message">Дякуємо!</string>
+    <string name="toast_error_message">На жаль у вас немає необхідного додатку :(</string>
+    <string name="leave_feedback">Відгук</string>
+
+    <string name="email">vladislav-loboda@mail.ru</string>
+    <string name="subject">Відгук</string>
+    <string name="your_rate">Ваша оцінка: </string>
+
+</resources>

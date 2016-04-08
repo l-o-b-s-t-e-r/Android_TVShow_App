@@ -12,5 +12,4 @@
         <item name="colorControlNormal">@color/white</item>
         <item name="android:textColorPrimaryInverse">@color/colorPrimary</item>
     </style>
-
 </resources>
